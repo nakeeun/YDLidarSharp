@@ -1,4 +1,4 @@
-# YDLidar_scan C#
+# YDLidar program based on C#
 
 This is YDLidar(G2) scan program based on C# language using YDLidarSharp wrapper.
 
