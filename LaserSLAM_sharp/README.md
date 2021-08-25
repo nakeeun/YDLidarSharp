@@ -3,6 +3,8 @@
 This is 2D LaserSLAM program based on C# language.
 There's still room for improvement.
 
+YDLidarG2 is used.
+
 **Reference :**
 
 1. YDLidarSharp github : https://github.com/Denny9700/YDLidarSharp.git
