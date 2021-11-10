@@ -1,4 +1,4 @@
-﻿namespace YDLidarSharp
+namespace YDLidarSharp
 {
   using System;
   using System.Collections.Generic;
@@ -9,147 +9,147 @@
   {
     #region CYdLidar Functions
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     private static extern string GetLidarPortList();
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void Free(IntPtr pointer);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern IntPtr CreateInstance();
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void DestroyInstance(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetMaxRange(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetMaxRange(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetMinRange(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetMinRange(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetMaxAngle(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetMaxAngle(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetMinAngle(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetMinAngle(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern int GetSampleRate(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetSampleRate(IntPtr instance, int value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetScanFrequency(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetScanFrequency(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool GetFixedResolution(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetFixedResolution(IntPtr instance, bool value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool GetReversion(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetReversion(IntPtr instance, bool value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool GetInverted(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetInverted(IntPtr instance, bool value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool GetAutoReconnect(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetAutoReconnect(IntPtr instance, bool value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern int GetSerialBaudrate(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetSerialBaudrate(IntPtr instance, int value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern int GetAbnormalCheckCount(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetAbnormalCheckCount(IntPtr instance, int value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     private static extern string GetSerialPort(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
     private static extern void SetSerialPort(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)]string value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetOffsetTime(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetOffsetTime(IntPtr instance, float value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool GetSingleChannel(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetSingleChannel(IntPtr instance, bool value);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern int GetLidarType(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SetLidarType(IntPtr instance, int type);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool Initialize(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool TurnOn(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool TurnOff(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern void Disconnecting(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern float GetAngleOffset(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern bool IsAngleOffsetCorrected(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     private static extern string GetSoftVersion(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     private static extern string GetHardwareVersion(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     private static extern string GetSerialNumber(IntPtr instance);
 
-    [DllImport("YDLidarSDK.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libYDLidarSDK.so", CallingConvention = CallingConvention.Cdecl)]
     private static extern IntPtr GetData(IntPtr instance);
 
     #endregion
@@ -526,44 +526,44 @@
       if (_instance == IntPtr.Zero)
         throw new Exception("Instance is null");
 
-      lock(_lockMutex)
-      {
-        if (IsRunning)
-        {
-          IntPtr pointer = GetData(_instance);
-          ExportData data = Marshal.PtrToStructure<ExportData>(pointer);
-
-          byte[] buffer = new byte[data.PointSize * Marshal.SizeOf(typeof(LaserPoint))];
-          Marshal.Copy(data.PointsPointer, buffer, 0, buffer.Length);
-
-          LaserScan laserScan = new LaserScan
-          {
-            Stamp = data.Stamp,
-            LaserConfig = data.LaserConfig,
-            LaserPoints = new List<LaserPoint>()
-          };
-
-          using (MemoryStream memStream = new MemoryStream(buffer))
-          using (BinaryReader reader = new BinaryReader(memStream))
-          {
-            for (int i = 0; i < data.PointSize; i++)
+            lock (_lockMutex)
             {
-              laserScan.LaserPoints.Add(new LaserPoint
-              {
-                Angle = reader.ReadSingle(),
-                Range = reader.ReadSingle(),
-                Intensity = reader.ReadSingle()
-              });
+                if (IsRunning)
+                {
+                    IntPtr pointer = GetData(_instance);
+                    ExportData data = Marshal.PtrToStructure<ExportData>(pointer);
+
+                    byte[] buffer = new byte[data.PointSize * Marshal.SizeOf(typeof(LaserPoint))];
+                    Marshal.Copy(data.PointsPointer, buffer, 0, buffer.Length);
+
+                    LaserScan laserScan = new LaserScan
+                    {
+                        Stamp = data.Stamp,
+                        LaserConfig = data.LaserConfig,
+                        LaserPoints = new List<LaserPoint>()
+                    };
+
+                    using (MemoryStream memStream = new MemoryStream(buffer))
+                    using (BinaryReader reader = new BinaryReader(memStream))
+                    {
+                        for (int i = 0; i < data.PointSize; i++)
+                        {
+                            laserScan.LaserPoints.Add(new LaserPoint
+                            {
+                                Angle = reader.ReadSingle(),
+                                Range = reader.ReadSingle(),
+                                Intensity = reader.ReadSingle()
+                            });
+                        }
+                    }
+
+                    Free(data.PointsPointer);
+                    Free(pointer);
+
+                    return laserScan;
+                }
             }
-          }
-
-          Free(data.PointsPointer);
-          Free(pointer);
-
-          return laserScan;
-        }
-      }
       return new LaserScan();
     }
-  }
+    }
 }
