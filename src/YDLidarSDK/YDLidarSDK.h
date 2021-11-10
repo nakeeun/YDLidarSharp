@@ -4,21 +4,9 @@
 
 #include <CYdLidar.h>
 
-#ifdef __cplusplus
 extern "C" {
-#endif
-
-#if defined(_MSC_VER)
-#define EXPORT __declspec(dllexport)
-#define IMPORT __declspec(dllimport)
-#endif
-
-	using namespace std;
-	using namespace ydlidar;
-
-#if defined(_MSC_VER)
-#pragma comment(lib, "ydlidar_driver.lib")
-#endif
+using namespace std;
+using namespace ydlidar;
 
 	struct ExportData
 	{
@@ -29,77 +17,73 @@ extern "C" {
 		LaserPoint* Points;
 	};
 
-	EXPORT char* GetLidarPortList();
-	EXPORT void Free(void* pointer);
+	 extern char* GetLidarPortList();
+	 extern void Free(void* pointer);
 
 	//CYLidar
-	EXPORT void* CreateInstance();
-	EXPORT void DestroyInstance(void* instance);
+	 extern void* CreateInstance();
+	 extern void DestroyInstance(void* instance);
 
-	EXPORT float GetMaxRange(void* instance);
-	EXPORT void SetMaxRange(void* instance, float value);
+	 extern float GetMaxRange(void* instance);
+	 extern void SetMaxRange(void* instance, float value);
 
-	EXPORT float GetMinRange(void* instance);
-	EXPORT void SetMinRange(void* instance, float value);
+	 extern float GetMinRange(void* instance);
+	 extern void SetMinRange(void* instance, float value);
 
-	EXPORT float GetMaxAngle(void* instance);
-	EXPORT void SetMaxAngle(void* instance, float value);
+	 extern float GetMaxAngle(void* instance);
+	 extern void SetMaxAngle(void* instance, float value);
 
-	EXPORT float GetMinAngle(void* instance);
-	EXPORT void SetMinAngle(void* instance, float value);
+	 extern float GetMinAngle(void* instance);
+	 extern void SetMinAngle(void* instance, float value);
 
-	EXPORT int GetSampleRate(void* instance);
-	EXPORT void SetSampleRate(void* instance, int value);
+	 extern int GetSampleRate(void* instance);
+	 extern void SetSampleRate(void* instance, int value);
 
-	EXPORT float GetScanFrequency(void* instance);
-	EXPORT void SetScanFrequency(void* instance, float value);
+	 extern float GetScanFrequency(void* instance);
+	 extern void SetScanFrequency(void* instance, float value);
 
-	EXPORT bool GetFixedResolution(void* instance);
-	EXPORT void SetFixedResolution(void* instance, bool value);
+	 extern bool GetFixedResolution(void* instance);
+	 extern void SetFixedResolution(void* instance, bool value);
 
-	EXPORT bool GetReversion(void* instance);
-	EXPORT void SetReversion(void* instance, bool value);
+	 extern bool GetReversion(void* instance);
+	 extern void SetReversion(void* instance, bool value);
 
-	EXPORT bool GetInverted(void* instance);
-	EXPORT void SetInverted(void* instance, bool value);
+	 extern bool GetInverted(void* instance);
+	 extern void SetInverted(void* instance, bool value);
 
-	EXPORT bool GetAutoReconnect(void* instance);
-	EXPORT void SetAutoReconnect(void* instance, bool value);
+	 extern bool GetAutoReconnect(void* instance);
+	 extern void SetAutoReconnect(void* instance, bool value);
 
-	EXPORT int GetSerialBaudrate(void* instance);
-	EXPORT void SetSerialBaudrate(void* instance, int value);
+	 extern int GetSerialBaudrate(void* instance);
+	 extern void SetSerialBaudrate(void* instance, int value);
 
-	EXPORT int GetAbnormalCheckCount(void* instance);
-	EXPORT void SetAbnormalCheckCount(void* instance, int value);
+	 extern int GetAbnormalCheckCount(void* instance);
+	 extern void SetAbnormalCheckCount(void* instance, int value);
 
-	EXPORT char* GetSerialPort(void* instance);
-	EXPORT void SetSerialPort(void* instance, char* value);
+	 extern char* GetSerialPort(void* instance);
+	 extern void SetSerialPort(void* instance, char* value);
 
-	EXPORT float GetOffsetTime(void* instance);
-	EXPORT void SetOffsetTime(void* instance, float value);
+	 extern float GetOffsetTime(void* instance);
+	 extern void SetOffsetTime(void* instance, float value);
 
-	EXPORT bool GetSingleChannel(void* instance);
-	EXPORT void SetSingleChannel(void* instance, bool value);
+	 extern bool GetSingleChannel(void* instance);
+	 extern void SetSingleChannel(void* instance, bool value);
 
-	EXPORT int GetLidarType(void* instance);
-	EXPORT void SetLidarType(void* instance, int value);
+	 extern int GetLidarType(void* instance);
+	 extern void SetLidarType(void* instance, int value);
 
-	EXPORT bool Initialize(void* instance);
+	 extern bool Initialize(void* instance);
 
-	EXPORT bool TurnOn(void* instance);
-	EXPORT bool TurnOff(void* instance);
+	 extern bool TurnOn(void* instance);
+	 extern bool TurnOff(void* instance);
 
-	EXPORT void Disconnecting(void* instance);
+	 extern void Disconnecting(void* instance);
 
-	//Const?
-	EXPORT float GetAngleOffset(void* instance);
-	EXPORT bool IsAngleOffsetCorrected(void* instance);
-	EXPORT char* GetSoftVersion(void* instance);
-	EXPORT char* GetHardwareVersion(void* instance);
-	EXPORT char* GetSerialNumber(void* instance);
+	 extern float GetAngleOffset(void* instance);
+	 extern bool IsAngleOffsetCorrected(void* instance);
+	 extern char* GetSoftVersion(void* instance);
+	 extern char* GetHardwareVersion(void* instance);
+	 extern char* GetSerialNumber(void* instance);
 
-	EXPORT void* GetData(void* instance);
-
-#ifdef __cplusplus
+	 extern void* GetData(void* instance);
 }
-#endif
